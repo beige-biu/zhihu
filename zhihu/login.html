@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <style>
+        .container {
+            background: url("./images/bg.png");
+            /*position: absolute;*/
+            height: 232px;
+            border: 1px solid pink;
+        }
+
+        .errMessage{
+            display: inline-block;
+            color: red;
+            width: 100%;
+            height: 30px;
+
+
+        }
+        #divLogin{
+            width: 100%;
+            height: 35px;
+            margin-bottom: 2px;
+            margin-top: 5px;
+
+        }
+        #btnLogin {
+            margin-bottom: 4px;
+            margin-left: 80%;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#username").blur(function () {
+               if($("#username").val().length<1) {
+                   $(".errMessage").text("用户名为空！")
+
+               }
+
+            })
+
+            $("#password").blur(function () {
+                if($("#password").val().length<1) {
+                    $(".errMessage").text("密码为空！")
+
+                }
+
+            })
+
+
+
+        })
+
+
+
+
+    </script>
+    <title>登录</title>
+</head>
+<body>
+<div class="container" style="margin-top: 10%;width: 30%; " >
+
+    <form action="#" method="post">
+        <div class="form-group">
+            <label >用户名：</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="用户名"  autocomplete="off" >
+        </div>
+        <div class="form-group">
+            <label >密码：</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="密码">
+        </div>
+        <div class="checkbox" style="display: none">
+            <label>
+                <input type="checkbox"> 记住密码
+            </label>
+        </div>
+        <span  class="errMessage"></span>
+        <div id="divLogin">
+            <button type="submit" class=" btn btn-success" id="btnLogin">登录</button>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>
