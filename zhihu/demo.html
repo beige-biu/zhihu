@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!--<link rel="stylesheet" href="fonts/glyphicons-halflings-regular.eot">-->
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <title>发现</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+            font-family: sans-serif;
+            font-size: 15px;
+            position: relative;
+
+        }
+
+        .nav {
+            position: relative;
+            height: 55px;
+        }
+
+        .navbar-nav li {
+            margin-left: 15px;
+            height: 55px;
+
+        }
+        #discover {
+            font-weight: bold;
+            border-bottom: 3px solid #0084ff;
+        }
+
+
+
+    </style>
+    <script>
+        $(function () {
+            $(".navbar-nav li a").bind('click', function () {
+                //获取所有navbar-nav li a 标签
+                var num = $(".navbar-nav li a").length;
+
+                // alert(num)
+                for (var i = 0; i < num; i++) {
+                    $(".navbar-nav li a").css({fontWeight: "normal", border: "none"})
+                }
+
+                $(this).css({fontWeight: "bold", borderBottom: "3px solid #0084ff"})
+
+            })
+
+            $("#search").bind('focus', function () {
+                $(this).css("width", "350px")
+                $("#query").css("display", "none")
+            })
+            $("#search").bind('blur', function () {
+                $(this).css("width", "300px")
+                $("#query").css("display", "")
+            })
+
+        })
+
+    </script>
+
+
+</head>
+<body>
+<!--导航开始-->
+<div style="width: 100%;height: 55px;background-color: #ffffff">
+    <div class="container">
+        <nav class="navbar navbar-default" style="background-color: #ffffff;border: none;">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" style="font-size: 35px ;color: #0084ff;margin-left: 35px">知乎</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">首页 <span class="sr-only">(current)</span></a></li>
+                        <li><a id="discover" href="#" >发现</a></li>
+                        <li><a href="#">等你来答</a></li>
+
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group" style="width: 400px;background-color: #f6f6f6">
+                            <input id="search" type="text" class="form-control" placeholder="Search"
+                                   style="width: 300px;border: none;background-color: #f6f6f6">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"
+                                  style="color: #8590a6;background-color: #f6f6f6"></span>
+                        </div>
+                        <button id="query" type="submit" class="btn btn-default"
+                                style="background-color:#0084ff;color: white">提问
+                        </button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><img src="images/ling.jpg" style="width: 25px" alt=""></a></li>
+                        <li><a href="#"><img src="images/xiaoxi.gif" style="width: 25px" alt=""></a></li>
+                        <li><a href="#"><img src="images/yonghu.gif" style="width: 25px" alt=""></a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+</div>
+
+<!--导航结束-->
+
+<!--中间部分开始-->
+<div class="container" style="width: 80% ;border: 1px solid pink;margin-top: 10px">
+<h1>pppppp</h1>
+
+</div>
+
+<!--中间部分结束-->
+</body>
+</html>
