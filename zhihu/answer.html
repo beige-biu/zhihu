@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!--<link rel="stylesheet" href="fonts/glyphicons-halflings-regular.eot">-->
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <title>等你来答</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+            font-family: sans-serif;
+            font-size: 15px;
+            position: relative;
+
+        }
+
+        .nav {
+            position: relative;
+            height: 55px;
+        }
+
+        .navbar-nav li {
+            margin-left: 15px;
+            height: 55px;
+
+        }
+
+        #answar1 {
+            font-weight: bold;
+            border-bottom: 3px solid #0084ff;
+        }
+
+        .right {
+            width: 38%;
+            margin-left: 5px;
+            float: right;
+            position: relative;
+        }
+
+        .right-fixed {
+            width: 398px;
+            /*margin-left: 5px;*/
+            float: right;
+            position: fixed;
+            top: -1200px;
+            left: 59%;
+        }
+
+        .right-top {
+            position: absolute;
+            width: 100%;
+            height: 155px;
+            background-color: #ffffff;
+            /*border: 1px solid yellow;*/
+        }
+
+        .top-shang {
+            width: 100%;
+            height: 75%;
+            /*border: 1px solid saddlebrown;*/
+            position: absolute;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-shang li {
+            /*border: 1px dashed red;*/
+            float: left;
+            width: 25%;
+            height: 100%;
+            text-align: center
+        }
+
+        .top-shang li a {
+            text-decoration: none;
+            /*text-align: center;*/
+            line-height: 100px;
+        }
+
+        #answar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #e1f0ff;
+            margin-left: 25%;
+            margin-top: 35%;
+            position: relative;
+            /*border: 1px solid red;*/
+        }
+
+        #vedio {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff3e1;
+            margin-left: 25%;
+            margin-top: 35%;
+            position: relative;
+        }
+
+        #article {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fef9e1;
+            margin-left: 25%;
+            margin-top: 35%;
+            position: relative;
+        }
+
+        #idea {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #e5f8f8;
+            margin-left: 25%;
+            margin-top: 35%;
+            position: relative;
+        }
+
+        .glyphicon-list-alt {
+            font-size: 20px;
+
+        }
+
+        .glyphicon-facetime-video {
+            font-size: 20px;
+            color: #ffc473;
+        }
+
+        .glyphicon-edit {
+            font-size: 20px;
+            color: #f8e073;
+        }
+
+        .glyphicon-pencil {
+            font-size: 20px;
+            color: #54cccc;
+        }
+
+        #answar span {
+            position: absolute;
+            left: 28%;
+            top: 31%;
+        }
+
+        #vedio span {
+            position: absolute;
+            left: 28%;
+            top: 31%;
+        }
+
+        #article span {
+            position: absolute;
+            left: 28%;
+            top: 31%;
+        }
+
+        #idea span {
+            position: absolute;
+            left: 28%;
+            top: 31%;
+        }
+
+        .glyphicon-list-alt a {
+            font-size: 15px;
+        }
+
+        .glyphicon-facetime-video a {
+            font-size: 15px;
+        }
+
+        .glyphicon-edit a {
+            font-size: 15px;
+        }
+
+        .total {
+            display: inline-block;
+            font-size: 10px;
+            margin-top: 15px;
+            color: #0f0f0f;
+        }
+
+        .right-middle {
+            position: absolute;
+            width: 100%;
+            height: 25%;
+            /*background-color: #2aabd2;*/
+            top: 75%;
+            margin: 0;
+            padding: 0;
+            border-top: 2px solid #f6f6f6;
+            /*border-top: 2px solid red;*/
+        }
+
+        .right-middle li {
+            float: left;
+            list-style: none;
+            width: 50%;
+            text-align: center;
+            line-height: 38px;
+        }
+
+        .right-middle-left {
+            border-right: 0.5px solid #f6f6f6;
+        }
+
+        .right-middle-right {
+            border-left: 0.5px solid #f6f6f6;
+        }
+
+        .framer-center {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            /*border: 1px solid yellow;*/
+            margin-top: 42%;
+            text-align: left;
+            line-height: 50px;
+            background-color: #fff;
+
+        }
+
+        .framer-center a {
+            text-decoration: none;
+        }
+
+        .multimedia {
+            width: 100%;
+            height: 170px;
+            margin-top: 10px;
+            background-color: #ffffff;
+            /*border: 1px solid saddlebrown;*/
+        }
+
+        .multimedia table tr td {
+            width: 33%;
+            height: 85px;
+            text-align: center;
+            line-height: 26px;
+            /*border: 1px dashed silver;*/
+        }
+
+        .live:hover {
+            color: #fff0af;
+        }
+
+        .book:hover {
+            color: #43d480;
+        }
+
+        .yuanzhuo:hover {
+            color: #0f8bff;
+        }
+
+        .zhuanlan:hover {
+            color: #0f8bff;
+        }
+
+        .zixun:hover {
+            color: #5478f0;
+        }
+
+        .baike:hover {
+            color: #5868d1;
+            /*color: red;*/
+        }
+
+        .banner {
+            width: 100%;
+            height: 340px;
+            position: relative;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            /*border: 1px solid yellow;*/
+        }
+
+        .banner1 {
+            width: 100%;
+            height: 340px;
+            position: relative;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            /*border: 1px solid yellow;*/
+        }
+
+        .quit {
+            position: absolute;
+            top: 0px;
+            right: 5px;
+        }
+
+        .quit1 {
+            position: absolute;
+            top: 0px;
+            right: 5px;
+        }
+
+        .info {
+            position: absolute;
+            width: 100%;
+            height: 280px;
+            margin-top: -35px;
+            background-color: white;
+        }
+
+        .info table {
+            width: 100%;
+
+        }
+
+        .info table tr td a {
+            width: 100%;
+            float: left;
+            color: #8590a6;
+            text-decoration: none;
+        }
+
+        .right-bottom {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            margin-top: 0px;
+            /*border: 1px solid skyblue;*/
+        }
+
+        .right-bottom ul li a {
+            font-size: 14px;
+            color: #8590a6;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .right-bottom ul li a:hover {
+            color: #175199;
+        }
+
+        .left-top {
+            width: 100%;
+            height: 70px;
+            /*border: 1px solid red;*/
+        }
+
+        .left-top ul {
+            margin: 0;
+            padding: 0;
+            margin-left: 20px;
+        }
+
+        .left-top ul li a {
+            font-size: 12px;
+            text-decoration: none;
+            color: #444444;
+        }
+
+        .left-top ul li:nth-child(1) a {
+            color: #0084ff;
+        }
+
+        .left-main p {
+            margin-left: 20px;
+        }
+
+        .left-main-l {
+            list-style: none;
+            margin: 0 20px;
+            padding: 0;
+
+        }
+
+        .left-main-l li {
+            float: left;
+            text-align: center;
+            margin-right: 25px;
+            height: 30px;
+            line-height: 30px;
+
+
+        }
+        .left-main-l li:nth-child(1) a{
+            color: #0084ff;
+        }
+        .left-main-l li a {
+            color: #8590a6;
+            text-decoration: none;
+        }
+
+        .left-main-r {
+            list-style: none;
+            margin: 0 20px;
+        }
+
+        .left-main-r li {
+            float: right;
+            font-size: 14px;
+            color: #8590a6;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .placeholder {
+            clear: both;
+        }
+
+
+    </style>
+    <script>
+        $(function () {
+            $(".navbar-nav li a").bind('click', function () {
+                //获取所有navbar-nav li a 标签
+                var num = $(".navbar-nav li a").length;
+
+                // alert(num)
+                for (var i = 0; i < num; i++) {
+                    $(".navbar-nav li a").css({fontWeight: "normal", border: "none"})
+                }
+
+                $(this).css({fontWeight: "bold", borderBottom: "3px solid #0084ff"})
+
+            })
+
+            $("#search").bind('focus', function () {
+                $(this).css("width", "350px")
+                $("#query").css("display", "none")
+            })
+            $("#search").bind('blur', function () {
+                $(this).css("width", "300px")
+                $("#query").css("display", "")
+            })
+
+            //获取屏幕高度
+            var scrnHeight = $(window).height();//657
+            //获取整个网页的高度
+            var wyHeight = $(document.body).height()//2662
+            //获取right-bottom的高度
+            var rbHeight = $('.right-bottom').offset().top;//1513
+            //alert(rbHeight)
+            $(document).scroll(function () {
+                var scollHeight = $(document).scrollTop();
+                if (scollHeight >= rbHeight - 200) {
+                    //固定右侧
+                    //alert(111111111)
+                    $(".right").addClass("right-fixed")
+                } else {
+                    $(".right").removeClass("right-fixed")
+                }
+            })
+
+
+            $(".left-top ul li a").bind('click', function () {
+                //获取所有left-top ul li a 标签
+                var num = $(".left-top ul li a").length;
+
+                //alert(num)
+                for (var i = 0; i < num; i++) {
+                    $(".left-top ul li a").css("color", "#000000")
+                }
+                $(this).css("color", "#0084ff")
+            })
+            $(".quit").bind('click', function () {
+                $(".banner").fadeOut("slow")
+            })
+            $(".quit1").bind('click', function () {
+                $(".banner1").fadeOut("slow")
+            })
+
+            $(".banner1").mouseover(function () {
+                $(".quit1").css("display", "block")
+            })
+            $(".banner1").mouseout(function () {
+                $(".quit1").css("display", "none")
+            })
+
+            $(".banner").mouseover(function () {
+                $(".quit").css("display", "block")
+            })
+            $(".banner").mouseout(function () {
+                $(".quit").css("display", "none")
+            })
+
+        })
+
+    </script>
+
+
+</head>
+<body>
+<!--导航开始-->
+<div style="width: 100%;height: 55px;background-color: #ffffff">
+    <div class="container">
+        <nav class="navbar navbar-default" style="background-color: #ffffff;border: none;">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" style="font-size: 35px ;color: #0084ff;margin-left: 35px">知乎</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">首页 <span class="sr-only">(current)</span></a></li>
+                        <li><a id="discover" href="discover.html">发现</a></li>
+                        <li><a id="answar1" href="#">等你来答</a></li>
+
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group" style="width: 400px;background-color: #f6f6f6">
+                            <input id="search" type="text" class="form-control" placeholder="Search"
+                                   style="width: 300px;border: none;background-color: #f6f6f6">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"
+                                  style="color: #8590a6;background-color: #f6f6f6"></span>
+                        </div>
+                        <button id="query" type="submit" class="btn btn-default"
+                                style="background-color:#0084ff;color: white">提问
+                        </button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><img src="images/ling.jpg" style="width: 25px" alt=""></a></li>
+                        <li><a href="#"><img src="images/xiaoxi.gif" style="width: 25px" alt=""></a></li>
+                        <li><a href="#"><img src="images/yonghu.gif" style="width: 25px" alt=""></a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+</div>
+
+<!--导航结束-->
+
+<!--中间部分开始-->
+<div class="container" style="width: 80%; position: relative;margin-top: 30px">
+    <div class="left" style="width: 60%;float:left;background-color: #ffffff">
+        <div class="left-top">
+            <ul style="width: 100%;height: 100%;">
+                <li style="width: 97px;height: 35px;background-color: #ebf5ff;border-radius: 30px;text-align: center;line-height: 35px;list-style: none;float: left;margin-right: 15px;margin-top: 20px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-fire"></span>
+                        人气问题
+                    </a>
+                </li>
+                <li style="width: 97px;height: 35px;background-color: #f0f2f4;border-radius: 30px;text-align: center;line-height: 35px;list-style: none;float: left;margin-right: 15px;margin-top: 20px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-leaf"></span>
+                        潜力好问
+                    </a>
+                </li>
+                <li style="width: 97px;height: 35px;background-color: #f0f2f4;border-radius: 30px;text-align: center;line-height: 35px;list-style: none;float: left;margin-right: 15px;margin-top: 20px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-question-sign"></span>
+                        新问题
+                    </a>
+                </li>
+                <li style="width: 97px;height: 35px;background-color: #f0f2f4;border-radius: 30px;text-align: center;line-height: 35px;list-style: none;float: left;margin-right: 15px;margin-top: 20px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-user"></span>
+                        人人答
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <hr>
+        <div class="left-main">
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" >
+
+            </div>
+
+
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" ></div>
+
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" ></div>
+
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" ></div>
+
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" ></div>
+
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" ></div>
+
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" ></div>
+
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" ></div>
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" ></div>
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" ></div>
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" ></div>
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" ></div>
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" ></div>
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" ></div>
+            <p style="font-weight: bold;font-size: 18pt">你愿意陪一个不认识的人聊天吗？</p>
+            <ul class="left-main-l">
+                <li style="width: 96px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #0084ff;border-radius: 5px">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-pencil" style="font-size: 14px"></span>
+                        写回答
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus" style="font-weight: normal"></span>
+                        关注问题
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                        稍后答
+                    </a>
+                </li>
+            </ul>
+            <ul class="left-main-r">
+                <li>1650浏览</li>
+                <li>·</li>
+                <li>271 个回答</li>
+            </ul>
+            <div class="placeholder"></div>
+            <div class="container" style="width: 90%;border:1px solid #f6f6f6;margin-top: 30px;margin-bottom: 20px" ></div>
+
+        </div>
+
+
+
+
+    </div>
+
+    <div class="right">
+        <div class="right-top">
+            <ul class="top-shang">
+                <li>
+                    <a href="#">
+                        <div id="answar">
+                            <span class="glyphicon glyphicon-list-alt">
+                            </span>
+                            <p class="total">回答题</p>
+                        </div>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div id="vedio">
+                            <span class="glyphicon glyphicon-facetime-video">
+                            </span>
+                            <p class="total">发视频</p>
+                        </div>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div id="article">
+                            <span class=" glyphicon glyphicon-edit">
+                            </span>
+                            <p class="total">写文章</p>
+                        </div>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div id="idea">
+                            <span class=" glyphicon glyphicon-pencil">
+                            </span>
+                            <p class="total">写想法</p>
+                        </div>
+
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="right-middle">
+                <li class="right-middle-left"><a href="#">稍后答</a></li>
+                <li class="right-middle-right"><a href="#">草稿箱</a></li>
+            </ul>
+
+
+        </div>
+
+        <div class="framer-center">
+            <a href="#">
+                <p class="glyphicon glyphicon-user" style="margin-left: 15px;font-size: 18px;color: #8590a6"></p>
+                &nbsp;&nbsp;创作者中心
+            </a>
+            <a href="#" style="float: right;margin-right: 50px">
+                <p style="color: #8784ff">去开通 &nbsp;&nbsp; ></p>
+            </a>
+
+        </div>
+
+        <div class=" multimedia">
+            <table style="width: 100%;height: 100%">
+                <tr style="width: 100%;height: 100%">
+                    <td>
+                        <a href="#" style="text-decoration: none">
+                            <span class="glyphicon glyphicon-flash"
+                                  style="font-size: 25px;margin-top: 8px;color: #fff0af"></span>
+                            <p class="live" style="margin-top: 2px;">Live</p>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" style="text-decoration: none">
+                            <span class="glyphicon glyphicon-book"
+                                  style="font-size: 25px;margin-top: 8px;color: #43d480"></span>
+                            <p class="book" style="margin-top: 2px;">书店</p>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" style="text-decoration: none">
+                            <span class="glyphicon glyphicon-certificate"
+                                  style="font-size: 25px;margin-top: 8px;color: #0f8bff"></span>
+                            <p class="yuanzhuo" style="margin-top: 2px;">圆桌</p>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#" style="text-decoration: none">
+                            <span class="glyphicon glyphicon-pencil"
+                                  style="font-size: 25px;margin-top: 8px;color: #1d8fec"></span>
+                            <p class="zhuanlan" style="margin-top: 2px;">专栏</p>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" style="text-decoration: none">
+                            <span class="glyphicon glyphicon-yen"
+                                  style="font-size: 25px;margin-top: 8px;color: #5478f0"></span>
+                            <p class="zixun" style="margin-top: 2px; ">付费咨询</p>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" style="text-decoration: none">
+                            <span class="glyphicon glyphicon-flag"
+                                  style="font-size: 25px;margin-top: 8px;color: #5868d1"></span>
+                            <p class="baike" style="margin-top: 2px;">百科</p>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="banner">
+            <a href="#">
+                <img src="images/banner.png" alt="" style="width: 100%;overflow: hidden">
+                <span class="glyphicon glyphicon-remove quit" style="color: red;display: none"></span>
+
+            </a>
+        </div>
+
+
+        <div class="info">
+            <table class="table table-hover">
+                <tr>
+                    <td>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-star"></span>
+                            &nbsp;&nbsp;我的收藏
+                            <div style="float: right ;width: 25px;height: 25px;background-color:#f6f6f6;text-align: center;line-height: 25px">
+                                1
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-question-sign"></span>
+                            &nbsp;&nbsp;我关注的问题
+                            <div style="float: right ;width: 25px;height: 25px;background-color:#f6f6f6;text-align: center;line-height: 25px">
+                                5
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user"></span>
+                            &nbsp;&nbsp;我的邀请
+                            <div style="float: right ;width: 25px;height: 25px;background-color:#f6f6f6;text-align: center;line-height: 25px">
+                                25
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-usd"></span>
+                            &nbsp;&nbsp;我的余额
+
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-tasks"></span>
+                            &nbsp;&nbsp;服务中心
+
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-headphones"></span>
+                            &nbsp;&nbsp;帮助中心
+
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-check"></span>
+                            &nbsp;&nbsp;版权服务中心
+
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="banner1">
+            <a href="#">
+                <img src="images/banner1.png" alt="" style="width: 100%;overflow: hidden">
+                <span class="glyphicon glyphicon-remove quit1" style="color: red;display: none"></span>
+
+            </a>
+        </div>
+
+        <div class="right-bottom">
+            <ul style="margin: 0;padding: 0">
+                <li style="list-style: none;margin-right: 4px">
+                    <a href="#">刘看山</a>&nbsp;·
+                    <a href="#"> &nbsp;知乎指南</a>&nbsp;·
+                    <a href="#">&nbsp; 知乎协议</a>&nbsp;·
+                    <a href="#">&nbsp; 知乎隐私保护指引</a>
+                </li>
+                <li style="list-style: none;margin-right: 4px">
+                    <a href="#">应用</a>&nbsp;·
+                    <a href="#"> &nbsp;工作</a>&nbsp;·
+                    <a href="#">&nbsp; 申请开通知乎机构号</a>
+                </li>
+                <li style="list-style: none;margin-right: 4px">
+                    <a href="#">侵权举报</a>&nbsp;·
+                    <a href="#"> &nbsp;网上有害信息举报专区</a>
+                </li>
+                <li style="list-style: none;margin-right: 4px">
+                    <a href="#"> &nbsp;京 ICP 证 110745 号</a>
+                </li>
+                <li style="list-style: none;margin-right: 4px">
+                    <a href="#"> &nbsp;京 ICP 备 13052560 号 - 1</a>
+                </li>
+                <li style="list-style: none;margin-right: 4px">
+                    <a href=""><img src="images/jc.png" alt=""></a>
+                    <a href="#"> &nbsp;京公网安备 11010802010035 号</a>
+                </li>
+                <li style="list-style: none;margin-right: 4px">
+                    <a href="#"> &nbsp;互联网药品信息服务资格证书</a>
+                </li>
+                <li style="list-style: none;margin-right: 4px">
+                    <a href="#"> &nbsp;（京）- 非经营性 - 2017 - 0067</a>
+                </li>
+                <li style="list-style: none;margin-right: 4px">
+                    <a href="#"> &nbsp;违法和不良信息举报：010-82716601</a>
+                </li>
+                <li style="list-style: none;margin-right: 4px">
+                    <a href="#"> &nbsp;儿童色情信息举报专区</a>
+                </li>
+                <li style="list-style: none;margin-right: 4px">
+                    <a href="#"> &nbsp;证照中心</a>
+                </li>
+                <li style="list-style: none;margin-right: 4px">
+                    <a href="#"> &nbsp;联系我们 © 2020 知乎</a>
+                </li>
+            </ul>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<!--中间部分结束-->
+</body>
+</html>
